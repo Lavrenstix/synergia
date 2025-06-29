@@ -1,0 +1,15 @@
+A = list(map(int, input("Введите массив через пробел: ").split()))
+N = len(A)
+
+max_index = A.index(max(A))
+min_index = A.index(min(A))
+
+start = min(max_index, min_index)
+end = max(max_index, min_index)
+
+sum_negative = 0
+for i in range(start + 1, end):
+    if A[i] < 0:
+        sum_negative += A[i]
+
+print("Сумма отрицательных элементов между максимумом и минимумом:", sum_negative)
